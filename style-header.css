@@ -1,0 +1,112 @@
+:root{
+    --custom-blue: rgb(33, 107, 243);
+    --light-blue: rgb(14, 179, 255);
+}
+html, body{
+    height: 100%;
+    margin:0;
+}
+
+#content{
+    min-height: 100%;
+}
+#include-header{
+    transition: all 1s;
+    float:left;
+    overflow: hidden;
+}
+#header, #menu{/*Menu étendu*/
+    font-family: 'Manrope', sans-serif;
+    background-color: rgb(54, 59, 59);
+    
+}
+#header h1, #header h2{
+    color: white;
+    text-align: center;
+}
+#header h1{
+    font-size: 35px;
+}
+#header h2{
+    font-size: 20px;
+    
+}
+#include-header i{
+    font-size: 40px;
+    color: var(--custom-blue);
+    cursor: pointer;
+    width: 100%;
+    
+}
+#include-header i:hover{
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 4s infinite;
+}
+
+@keyframes rainbow { 
+    0% {color: #ff0000;}
+    10% {color: #ff8000;}
+    20% {color: #ffff00;}
+    30% {color: #80ff00;}
+    40% {color: #00ff00;}
+    50% {color: #00ff80;}
+    60% {color: #00ffff;}
+    70% {color: #0080ff;}
+    80% {color: #0000ff;}
+    90% {color: #8000ff;}
+    100% {color: #ff0080;}
+}
+#header .auto{
+    font-size: 25px;
+    float: right;
+    position: relative;
+    top: 0;
+    padding: 5px 5px 0 0;
+    width: auto;
+}
+#menu{
+    min-height: 100%;
+    text-align: center;
+}
+#menu a{
+    background-color: rgb(44,49,49);
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--custom-blue);
+    width: 100%;
+}
+#menu a:hover{
+    background-color: rgb(25,30,30);
+}
+#menu a.active{
+    color: var(--custom-blue);
+}
+#menu li{
+    width: 100%;
+    font-size: 18px;
+}
+#menu .beautify{
+    background-color: var(--custom-blue);
+    color: white;
+}
+#menu .selected:hover{
+    background-color: rgb(94, 187, 230);
+}
+#menu .selected li::before{
+    color:var(--light-blue);
+    
+}
+#menu .beautify li::before{
+    font-size: 18px;
+    content: '»  ';
+}
+
+#menu .green-btn{
+    color: white;
+    background-color: rgb(7, 165, 7);
+}
+#menu .green-btn:hover{
+    background-color: rgb(31, 218, 31);
+}

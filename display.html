@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulcain</title>
+    <link rel="stylesheet" href="style-display.css">
+    <link rel="stylesheet" href="style-header.css">
+    <link rel="stylesheet" href="style-footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Noto+Sans+HK&family=Nunito:wght@500&display=swap" rel="stylesheet">
+    <!--Using 3rd-party scripts AND communicate with electron's main process (https://github.com/electron/electron/issues/254#issuecomment-183483641)-->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}
+    </script>
+    <script src="https://kit.fontawesome.com/d7b93d1ae6.js"></script>
+    <script src="../resources/jquery-3.6.0.js"></script>
+    <script src="ActionCenter.js"></script>
+    <script src="constants.js"></script>
+    <script src="VulcainWebSocket.js"></script>
+    <script>if (window.module) {module = window.module;}
+    </script>
+    <script>
+        $(function(){
+            $("#include-header").load("header.html");
+            $("#include-content").load("index.html", function(){
+                startup();        
+            }).addClass("index");
+            $("#include-footer").load("footer.html", function(){
+                switchTheme();
+                $("#version")[0].querySelector("p").innerHTML = '<i class="fas fa-code"></i>Vulcain v'+ appVersion;
+            });
+        });
+        //Reload css
+        require('electron').ipcRenderer.on('reload-css', (event, message) => {
+            var links = Array.from(document.getElementsByTagName('link'));
+            links.forEach(element => {
+                if(element.rel === "stylesheet"){
+                    element.href += "";
+                }
+            });
+        });
+        </script>
+</head>
+<body>
+    
+    <div id="content">
+        <div class="alert" id="notify">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';this.parentElement.innerHTML = '';">&times;</span>
+        </div>
+        <div id="include-header"></div>
+        <div id="include-content"></div>
+        <div id="include-footer"></div>
+    </div>
+</body>
+<script>
+    var vulcain;
+    function startup(){
+        var  stateEle = document.getElementById('index-state').getElementsByTagName('p')[0];
+        vulcain = new VulcainWebSocket(stateEle, wsUrl);
+        console.log('Inner: '+vulcain.addr);
+    }
+    function switchTheme(){
+        var moon = document.body.classList.toggle("dark-mode");
+        var para = document.getElementById("theme").getElementsByTagName("p")[0];
+        if(moon){
+            para.innerHTML = "Thème Foncé <i class=\"far fa-moon\"></i>";
+        }else{
+            para.innerHTML = "Thème Clair <i class=\"far fa-sun\"></i>";
+        }
+    }
+
+    function refreshApp(){
+        vulcain.refresh();
+        var indexEle = document.getElementById("btn-link");
+        openLink('index.html', index);
+    }
+
+    function registerUpdateList(ele){
+        console.log('h'+ele);
+        ele.addEventListener("click", function(){vulcain.connect()}, false);
+    }
+</script>
+</html>

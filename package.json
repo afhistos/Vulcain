@@ -1,0 +1,14 @@
+{
+    "name": "Vulcain",
+    "version": "1.0.0",
+    "description": "Le client de Ganymède",
+    "main": "main.js",
+    "scripts": {
+        "test": "electron ."
+    },
+    "author": "afhistos et lui-même",
+    "license": "GPL-3.0",
+    "devDependencies": {
+        "electron": "^12.0.1"
+    }
+}

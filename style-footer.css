@@ -1,0 +1,33 @@
+
+#footer, #footer a{
+    background: black;
+    /*position: fixed;
+    height: 35px;
+    bottom:0;*/
+    color: rgb(65, 132, 255);
+    text-align: center;
+    line-height: 35px;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    z-index: 2;
+}
+#footer img{
+    position: absolute;
+    float: right;
+    width: 32px;
+}
+#version{
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    cursor: pointer;
+}
+#theme{
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    cursor: pointer;
+}
+#theme:hover{
+    color:rgb(30, 78, 168);
+}
