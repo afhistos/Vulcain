@@ -1,6 +1,6 @@
 
 body{
-    overflow: visible;
+    overflow: hidden;
 }
 #content{
     display: grid;
