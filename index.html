@@ -1,0 +1,11 @@
+<div class="card" style="width: 50%;">
+    <div class="card-body">
+        <h1 class="card-title">Choisir un serveur</h1>
+        <p>État: <span class="card-subtitle" id="index-state">Initialisation</span></p>
+        <select id="guilds" class="form-select mb-3" onchange="registerServerId(this.options[this.selectedIndex].value);">
+            <optgroup label="Mais qui va-t-on contrôler ?"></optgroup>
+        </select>
+        <button type="button" class="btn btn-success"><i class="fas fa-check"></i> Valider</button>
+        <button type="button" class="btn btn-primary" onclick="vulcain.updateGuildList();"><i class="fas fa-sync-alt"></i> Actualiser</button>
+    </div>
+</div>
