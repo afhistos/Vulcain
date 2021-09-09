@@ -8,3 +8,4 @@ Version:
 * d'Electron: 12.0.1
 * de NodeJS: 14.16.0<br/>
 Vulcain utilise le framework Bootstrap pour le front-end
+WIP
