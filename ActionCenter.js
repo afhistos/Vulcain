@@ -44,19 +44,23 @@ function shortString(sel){
 
 function openLink(page, element){
     var pageName = page.replace(".html", "");
-    var currentElement = $(".selected");
+    var currentElement = $(".active");
+    console.log('current: '+currentElement);
     $("#include-content")[0].className = '';
     $("#include-content").load(page, function(resp, status, xhr){
         if(status == "error"){
             $("#include-content").html("Error "+xhr.status+"\nImpossible de charger la page. Redirection...");
             currentElement.click();
         }else{
-            element.classList.addClass("selected");
+            currentElement.classList.removeClass("active");
+            element.classList.addClass("active");
         }
     }).addClass(pageName);
     //Changer l'affichage
+    /*
     if(element !== undefined){
         document.getElementById('menu').getElementsByClassName('selected')[0].className = "";
         element.className  = "selected beautify";
     }
+    */
 }
