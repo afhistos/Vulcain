@@ -1,3 +1,24 @@
 <script src="stats.js"></script>
-<h1 id="title"></h1>
-<p id="state">Initialisation...</p>
+<div id="statsCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="0" class="active"></button>
+		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="1"></button>
+		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="2"></button>
+	</div>
+	<div class="carousel-inner text-white h-100 w-100">
+		<div class="carousel-item active">
+		<p class="d-block w-100" id="state">Un super paragraphe</p>
+		</div>
+		<div class="carousel-item">
+		<p class="text-warning d-block w-75">Clique<button type="button" class="btn primary-btn">Salut</button></p>
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#statsCarousel" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+		<span class="visually-hidden">Précédent</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#statsCarousel" data-bs-slide="next">
+		<span class="carousel-control-next-icon"></span>
+		<span class="visually-hidden">Suivant</span>
+	</button>
+</div>
