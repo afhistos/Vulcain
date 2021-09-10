@@ -5,7 +5,7 @@
         <select id="guilds" class="form-select mb-3" onchange="vulcain.serverId = this.options[this.selectedIndex].value;">
             <optgroup label="Mais qui va-t-on contrôler ?"></optgroup>
         </select>
-        <button type="button" class="btn btn-success" onclick="openLink('server.html', this);"><i class="fas fa-check"></i> Valider</button>
+        <button type="button" class="btn btn-success" onclick="$('#stats').click();"><i class="fas fa-check"></i> Valider</button>
         <button type="button" class="btn btn-primary" onclick="vulcain.updateGuildList();"><i class="fas fa-sync-alt"></i> Actualiser</button>
     </div>
 </div>
