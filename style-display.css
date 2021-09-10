@@ -7,6 +7,7 @@ body{
     grid-template-columns: min(30%, 300px) auto;
     grid-template-rows: auto 35px;
     grid-gap: 0;
+    height: 100vh;
 }
 #include-header{
     grid-column: 1;
