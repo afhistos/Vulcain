@@ -1,10 +1,10 @@
 var json = {
     "action": "getStats",
-    "guild": serverId
+    "guild": vulcain.serverId
 };
 var state = document.getElementById('state');
 state.innerText = "Envoi de "+JSON.stringify(json);
-sendRequest(json);
+vulcain.sendRequest(json);
 
 function displayText(txt) {
     var parsedTxt = JSON.parse(txt);
