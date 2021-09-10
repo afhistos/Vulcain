@@ -1,11 +1,34 @@
 <script src="stats.js"></script>
+<!--<h1 class="text-center">Statistiques de <span class="text-primary" text="guildName">Chargement</span></h1>-->
 <div id="statsCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel">
 	<div class="carousel-indicators">
 		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
 		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="1"></button>
+		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="2"></button>
+		<button type="button" data-bs-target="#statsCarousel" data-bs-slide-to="3"></button>
 	</div>
 	<div class="carousel-inner text-black h-100 w-100 d-flex align-items-center">
 		<div class="carousel-item active">
+			<div class="card mx-auto vu-stats-card">
+				<img src="../resources/stats_loading.webp" class="card-img-top" alt="loading">
+				<div class="card-body">
+					<h3 class="card-title">Serveur</h3>
+					<h5 class="card-subtitle mb-2 text-muted">Résumé des statistiques</h5>
+					<p class="card-text">
+						<p>Propriétaire: <span class="text-primary" text="membersOwner">C'est moi wsh</span></p>
+						<p>Nombre de membres: <span class="text-primary" text="membersCount">47</span></p>
+						<p>Nombre de salons: <span class="text-primary" text="channelsCount">23</span></p>
+						<p>Nombre de messages: <span class="text-primary" text="channelsMessageCount">1</span></p>
+						<p>Nombre de boosts: <span class="text-primary" text="guildBoostCount">1</span></p>
+						<p>Nombre d'invitations actives: <span class="text-primary" text="guildInviteCount">1</span></p>
+						<p>Dernière personne arrivée: <span class="text-primary" text="memberLast">Michel</span></p>
+						<p>Date de création: <span class="text-primary" text="guildCreation">23/10/2018</span></p>
+						<p>Date d'arrivée de Ganymède: <span class="text-primary" text="memberGanymede">22/10/2018</span></p>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item">
 			<div class="card mx-auto vu-stats-card">
 				<img src="../resources/stats_loading.webp" class="card-img-top" alt="loading">
 				<div class="card-body">
@@ -21,8 +44,39 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<p class="text-warning d-block w-75">Clique<button type="button" class="btn primary-btn">Salut</button></p>
+			<div class="card mx-auto vu-stats-card">
+				<img src="../resources/stats_loading.webp" class="card-img-top" alt="loading">
+				<div class="card-body">
+					<h3 class="card-title">Membres</h3>
+					<p class="card-text">
+						<p>Propriétaire: <span class="text-primary" text="membersOwner">C'est moi wsh</span></p>
+						<p>Nombre de membres: <span class="text-primary" text="membersCount">47</span></p>
+						<p>Nombre de membres connectés: <span class="text-primary" text="membersConnectedCount">47</span></p>
+						<p>Nombre d'administrateurs: <span class="text-primary" text="membersAdminCount">23</span></p>
+						<p>Nombre de boosters: <span class="text-primary" text="memberBoostersCount">1</span></p>
+						<p>Dernière personne arrivée :<span class="text-primary" text="memberLast">Michel</span></p>
+					</p>
+				</div>
+			</div>
 		</div>
+		<div class="carousel-item">
+			<div class="card mx-auto vu-stats-card">
+				<img src="../resources/stats_loading.webp" class="card-img-top" alt="loading">
+				<div class="card-body">
+					<h3 class="card-title">Salons</h3>
+					<p class="card-text">
+						<p>Nombre de catégories: <span class="text-primary" text="channelsCatCount">123</span></p>
+						<p>Nombre de salons: <span class="text-primary" text="channelsCount">47</span></p>
+						<p>Nombre de salons textuels: <span class="text-primary" text="channelsTextCount">23</span></p>
+						<p>Nombre de salons vocaux: <span class="text-primary" text="channelsVoiceCount">1</span></p>
+						<p>Nombre de personnes en vocal: <span class="text-primary" text="channelsVoiceUserCount">2</span></p>
+						<p>Nombre de messages :<span class="text-primary" text="channelsMessageCount">78215</span></p>
+						<p>Nombre de salons d'annonces :<span class="text-primary" text="channelsAnnCount">1</span></p>
+					</p>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 	<button class="carousel-control-prev" type="button" data-bs-target="#statsCarousel" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon"></span>
