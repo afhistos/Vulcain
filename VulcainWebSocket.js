@@ -6,19 +6,6 @@ class VulcainWebSocket{
         this.addr = addr;
         this.ws = this.#openWebSocket(addr, stateElement);
     }
-
-    showError = function(errText){
-        var div = document.getElementById("notify");
-        console.log("Erreur: %o", errText);
-        if(div.style.display === ""){
-            div.style.display = "block";
-        }
-        div.innerHTML += errText+"<br/>";
-        setTimeout(function(){
-            div.style.display = "none";
-            div.innerHTML= "";
-        }, 3500);
-    }
     
     set serverId(id){
         this.#serverId = id;
@@ -81,9 +68,9 @@ class VulcainWebSocket{
         }
         this.ws.onclose = (event) =>{
             if(event.code == 1006){//impossible d'atteindre le serveur
+                stateElement.innerText = "Impossible de se connecter.";
                 this.showError("Erreur! Code:"+event.code+". Le serveur est fermé!");
                 this.#showRetryButton();
-                stateElement.innerText = "Impossible de se connecter.";
             }else{
                 this.showError("Erreur inconnue! Code:"+event.code+". <a href=\"https://github.com/Luka967/websocket-close-codes#websocket-close-codes\" style=\"color:white;text-decoration:underline;\" target=\"_blank\">Liste des codes d'erreurs</a>");
             }
@@ -106,14 +93,18 @@ class VulcainWebSocket{
     }
 
     #showRetryButton = function(){
-        var retryBtn = document.createElement('a');
-        var innerLi = document.createElement('li');
-        var txt = document.createTextNode('Réessayer la connexion');
-        innerLi.append(txt);
-        retryBtn.append(innerLi);
-        retryBtn.setAttribute('href', '#');
-        retryBtn.classList.add('green-btn');
-        document.querySelector("#menu").getElementsByTagName("ul")[0].append(retryBtn);
+        var listItem = document.createElement('li');
+        var retryBtn = document.createElement('button');
+        var text = document.createTextNode('Réessayer la connexion');
+        retryBtn.append(text);
+        retryBtn.setAttribute('type', 'button');
+        retryBtn.classList.add('btn');
+        retryBtn.classList.add('btn-success');
+        retryBtn.classList.add('nav-link');
+        retryBtn.classList.add('text-white');
+        listItem.classList.add('nav-item');
+        listItem.appendChild(retryBtn);
+        document.querySelector("#menu").append(listItem);
         retryBtn.addEventListener('click', (e) =>{this.connect(retryBtn)});
     }
 

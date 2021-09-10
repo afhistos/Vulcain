@@ -5,7 +5,9 @@ footer, footer a{
     line-height: 35px;
     width: 100%;
     font-family: 'Manrope', sans-serif;
-    z-index: 2;
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
 }
 footer img{
     position: absolute;

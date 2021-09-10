@@ -12,6 +12,10 @@
     color: white;
     transition: ease-in-out 0.3s;
 }
+
+.vu-nav button:hover{
+    background-color: rgb(17, 170, 99);
+}
 .vu-bg-dark-theme{
     background-color: rgb(25, 25, 26)
 }
