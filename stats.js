@@ -20,7 +20,7 @@ class Stats{
     #guildInviteCount
     #memberLast
     #guildCreation
-    #memberGanymedejoin
+    #memberGanymedeJoin
 
     //part 2
     #rolesCount
